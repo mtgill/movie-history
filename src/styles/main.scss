@@ -4,8 +4,15 @@ body {
   background-color: lightblue;
 }
 
-.movie-image {
-  max-height: 70%;
+.movie-card {
+  margin-top: 20px;
+  text-align: center;
+  background: none;
+  border: none;
+  height: 30%;
+  .movie-image {
+    height: 70%;
+  }
 }
 
 .hide {
