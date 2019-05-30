@@ -1,0 +1,17 @@
+{
+  "movie1": {
+    "title": "Oceans 11",
+    "movieRating": "PG-13",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYzVmYzVkMmUtOGRhMi00MTNmLThlMmUtZTljYjlkMjNkMjJkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg"
+  },
+  "movie2": {
+    "title": "Bourne Identity",
+    "movieRating": "PG-13",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/BourneIdentityfilm.jpg"
+  },
+  "movie3": {
+    "title": "Garden State",
+    "movieRating": "R",
+    "imageUrl": "https://resizing.flixster.com/2jzRqLGqUneXInhQIkjVvbVAB6k=/206x305/v1.bTsxMTIwODQ3MTtqOzE4MTI5OzEyMDA7MTIwMDsxNjAw"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "movies": "base",
+  "moviePeopleRole": "base",
+  "people": "base",
+  "roles": "base",
+  "userMovie": "base"
+}
