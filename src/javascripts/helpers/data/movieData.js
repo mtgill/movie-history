@@ -17,4 +17,6 @@ const getMoviesByUid = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getMoviesByUid };
+const addNewMovie = movieObject => Axios.post(`${firebaseUrl}/movies.json`, movieObject);
+
+export default { getMoviesByUid, addNewMovie };
