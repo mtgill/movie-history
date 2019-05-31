@@ -29,6 +29,8 @@ const checkLoginStatus = () => {
       movieNavbar.classList.add('hide');
       authNavbar.classList.remove('hide');
       logoutNavbar.classList.add('hide');
+      addMovieDiv.classList.add('hide');
+      document.getElementById('movie-card').classList.add('hide');
     }
   });
 };

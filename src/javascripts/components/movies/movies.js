@@ -6,7 +6,7 @@ const movieCardBuilder = () => {
     .then((movies) => {
       let domString = '';
       movies.forEach((movie) => {
-        domString += '<div class="col-sm-12 col-md-6 col-lg-4 card-group">';
+        domString += '<div id="movie-card" class="col-sm-12 col-md-6 col-lg-3 card-group">';
         domString += '<div class="card movie-card">';
         domString += `<h3 class="card-title">${movie.title}</h3>`;
         domString += `<img src="${movie.imageUrl}" class="img-fluid movie-image" alt="movie photo" />`;
@@ -41,6 +41,8 @@ const createMovie = (e) => {
 
 const newMovieButton = () => {
   document.getElementById('movies').classList.add('hide');
+  document.getElementById('movie-card').classList.add('hide');
+  document.getElementById('add-movies-div').classList.add('hide');
   document.getElementById('new-movie').classList.remove('hide');
   document.getElementById('add-movie-button').addEventListener('click', createMovie);
 };
