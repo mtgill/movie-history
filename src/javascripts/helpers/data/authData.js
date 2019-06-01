@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import movies from '../../components/movies/movies';
+import userMovies from '../../components/userMovies/userMovie';
 
 
 const authDiv = document.getElementById('auth');
@@ -14,7 +15,6 @@ const addMovieDiv = document.getElementById('add-movies-div');
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.error(user.uid);
       authDiv.classList.add('hide');
       movieDiv.classList.remove('hide');
       movieNavbar.classList.remove('hide');
@@ -23,6 +23,7 @@ const checkLoginStatus = () => {
       addMovieDiv.classList.remove('hide');
       movies.movieCardBuilder();
       movies.showAddMovie();
+      userMovies.watchlistEvent();
     } else {
       authDiv.classList.remove('hide');
       movieDiv.classList.add('hide');
@@ -30,7 +31,7 @@ const checkLoginStatus = () => {
       authNavbar.classList.remove('hide');
       logoutNavbar.classList.add('hide');
       addMovieDiv.classList.add('hide');
-      document.getElementById('movie-card').classList.add('hide');
+      // document.getElementById('movie-card').classList.add('hide');
     }
   });
 };
