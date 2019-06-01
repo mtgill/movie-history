@@ -11,7 +11,7 @@ const getWatchList = () => {
     .then((userMovies) => {
       // console.error('user movies', userMovies);
       userMovies.forEach((userMovie) => {
-        if (userMovie.isWatched === true) {
+        if (userMovie.isWatched === false) {
           movieData.getMoviesByUid()
             .then((movies) => {
               const matchingMovies = movies.filter(movie => movie.id === userMovie.movieId);
