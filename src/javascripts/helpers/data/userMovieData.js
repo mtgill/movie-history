@@ -15,7 +15,7 @@ const getUserMovies = () => new Promise((resolve, reject) => {
       resolve(userMovies);
     })
     .catch(err => reject(err));
-};
+});
 
 const addUserMovie = userMovieObject => Axios.post(`${firebaseUrl}/userMovie.json`, userMovieObject);
 

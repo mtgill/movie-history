@@ -3,6 +3,7 @@ import 'firebase/auth';
 
 import movies from '../../components/movies/movies';
 import userMovies from '../../components/userMovies/userMovie';
+import watchlist from '../../components/watchlist/watchlist';
 
 
 const authDiv = document.getElementById('auth');
@@ -24,6 +25,7 @@ const checkLoginStatus = () => {
       movies.movieCardBuilder();
       movies.showAddMovie();
       userMovies.watchlistEvent();
+      watchlist.getWatchList();
     } else {
       authDiv.classList.remove('hide');
       movieDiv.classList.add('hide');
