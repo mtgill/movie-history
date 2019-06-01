@@ -13,8 +13,11 @@ const createUserMovie = (e) => {
       isWatched: false,
       rating: 0,
     };
-    userMovieData.addUserMovie(newUserMovie);
-    watchlist.getWatchList();
+    userMovieData.addUserMovie(newUserMovie)
+      .then(() => {
+        watchlist.getWatchList();
+      })
+      .catch(err => console.error('movie not added', err));
   }
 };
 
