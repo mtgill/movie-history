@@ -14,12 +14,16 @@ const createUserMovie = (e) => {
       rating: 0,
     };
     userMovieData.addUserMovie(newUserMovie);
+    userMovieData.getUserMovies()
+      .then((userMovies) => {
+        console.error(userMovies);
+      });
     watchlist.getWatchList();
   }
 };
 
-const watchlistEvent = () => {
+const userMovieEvent = () => {
   document.getElementById('movies').addEventListener('click', createUserMovie);
 };
 
-export default { watchlistEvent };
+export default { userMovieEvent };

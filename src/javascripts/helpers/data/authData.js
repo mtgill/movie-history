@@ -24,8 +24,8 @@ const checkLoginStatus = () => {
       addMovieDiv.classList.remove('hide');
       movies.movieCardBuilder();
       movies.showAddMovie();
-      userMovies.watchlistEvent();
       watchlist.getWatchList();
+      userMovies.userMovieEvent();
     } else {
       authDiv.classList.remove('hide');
       movieDiv.classList.add('hide');
