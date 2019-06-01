@@ -4,6 +4,7 @@ import '../styles/main.scss';
 import auth from './components/auth/auth';
 import MyNavBar from './components/MyNavbar/MyNavbar';
 import authData from './helpers/data/authData';
+import watchlist from './components/watchlist/watchlist';
 
 import apiKeys from './helpers/apiKeys.json';
 
@@ -12,6 +13,7 @@ const init = () => {
   MyNavBar.navbarEvents();
   authData.checkLoginStatus();
   auth.authStringBuilder();
+  watchlist.getWatchList();
 };
 
 init();
