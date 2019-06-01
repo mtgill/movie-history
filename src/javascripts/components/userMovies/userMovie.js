@@ -5,7 +5,7 @@ import watchlist from '../watchlist/watchlist';
 import userMovieData from '../../helpers/data/userMovieData';
 
 const createUserMovie = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   if (e.target.classList.contains('watchlistButton')) {
     const newUserMovie = {
       uid: firebase.auth().currentUser.uid,
@@ -14,10 +14,6 @@ const createUserMovie = (e) => {
       rating: 0,
     };
     userMovieData.addUserMovie(newUserMovie);
-    userMovieData.getUserMovies()
-      .then((userMovies) => {
-        console.error(userMovies);
-      });
     watchlist.getWatchList();
   }
 };

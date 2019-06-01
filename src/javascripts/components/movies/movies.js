@@ -11,7 +11,7 @@ const movieCardBuilder = () => {
         domString += `<h3 class="card-title">${movie.title}</h3>`;
         domString += `<img src="${movie.imageUrl}" class="img-fluid movie-image" alt="movie photo" />`;
         domString += `<button id="${movie.id}" class="btn btn-info watchlistButton">Add To Watchlist</button>`;
-        domString += `<button id="rate-${movie.id}-button" class="btn btn-warning">Rate This Movie</button>`;
+        domString += `<button id="${movie.id}" class="btn btn-warning ratingButton">Rate This Movie</button>`;
         domString += `<h4 class="card-info">MPAA Rating: ${movie.movieRating}</h4>`;
         domString += '</div>';
         domString += '</div>';
