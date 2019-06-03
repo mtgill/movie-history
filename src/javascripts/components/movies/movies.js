@@ -34,13 +34,14 @@ const createMovie = (e) => {
       document.getElementById('new-mpaa-rating').value = '';
       document.getElementById('new-movie-image').value = '';
       document.getElementById('new-movie').classList.add('hide');
+      document.getElementById('movies').classList.remove('hide');
     })
     .catch(err => console.error('no new movies', err));
 };
 
 const newMovieButton = () => {
   document.getElementById('movies').classList.add('hide');
-  document.getElementById('movie-card').classList.add('hide');
+  // document.getElementById('movie-card').classList.add('hide');
   document.getElementById('add-movies-div').classList.add('hide');
   document.getElementById('new-movie').classList.remove('hide');
   document.getElementById('add-movie-button').addEventListener('click', createMovie);
