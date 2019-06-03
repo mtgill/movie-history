@@ -5,8 +5,10 @@ const movieCardBuilder = () => {
   movieData.getMoviesByUid()
     .then((movies) => {
       let domString = '';
+      domString += '<div class="container">';
+      domString += '<div class="row">';
       movies.forEach((movie) => {
-        domString += '<div id="movie-card" class="col-sm-12 col-md-6 col-lg-3 card-group">';
+        domString += '<div id="movie-card" class=" d-flex col-sm-12 col-md-6 col-lg-3 card-group">';
         domString += '<div class="card movie-card">';
         domString += `<h3 class="card-title">${movie.title}</h3>`;
         domString += `<img src="${movie.imageUrl}" class="img-fluid movie-image" alt="movie photo" />`;
@@ -16,6 +18,8 @@ const movieCardBuilder = () => {
         domString += '</div>';
         domString += '</div>';
       });
+      domString += '</div>';
+      domString += '</div>';
       util.printToDom('movies', domString);
     })
     .catch(err => console.error('movie not found', err));
@@ -35,14 +39,16 @@ const createMovie = (e) => {
       document.getElementById('new-movie-image').value = '';
       document.getElementById('new-movie').classList.add('hide');
       document.getElementById('movies').classList.remove('hide');
+      document.getElementById('add-movies-div').classList.remove('hide');
+      movieCardBuilder();
     })
     .catch(err => console.error('no new movies', err));
 };
 
 const newMovieButton = () => {
-  document.getElementById('movies').classList.add('hide');
   // document.getElementById('movie-card').classList.add('hide');
   document.getElementById('add-movies-div').classList.add('hide');
+  document.getElementById('movies').classList.add('hide');
   document.getElementById('new-movie').classList.remove('hide');
   document.getElementById('add-movie-button').addEventListener('click', createMovie);
 };
