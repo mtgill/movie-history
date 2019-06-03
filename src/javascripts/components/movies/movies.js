@@ -1,6 +1,20 @@
 import util from '../../helpers/util';
 import movieData from '../../helpers/data/movieData';
 
+const deleteMovieEvent = (e) => {
+  const movieId = e.target.id;
+  movieData.deleteMovie(movieId)
+    .then(() => movieCardBuilder()) // eslint-disable-line no-use-before-define
+    .catch(err => console.error('no deletion', err));
+};
+
+const movieEvents = () => {
+  const deleteButtons = document.getElementsByClassName('deleteButton');
+  for (let i = 0; i < deleteButtons.length; i += 1) {
+    deleteButtons[i].addEventListener('click', deleteMovieEvent);
+  }
+};
+
 const movieCardBuilder = () => {
   movieData.getMoviesByUid()
     .then((movies) => {
@@ -14,6 +28,7 @@ const movieCardBuilder = () => {
         domString += `<img src="${movie.imageUrl}" class="img-fluid movie-image" alt="movie photo" />`;
         domString += `<button id="${movie.id}" class="btn btn-info watchlistButton">Add To Watchlist</button>`;
         domString += `<button id="${movie.id}" class="btn btn-warning ratingButton">Rate This Movie</button>`;
+        domString += `<button id="${movie.id}" class="btn btn-danger deleteButton">Delete</button>`;
         domString += `<h4 class="card-info">MPAA Rating: ${movie.movieRating}</h4>`;
         domString += '</div>';
         domString += '</div>';
@@ -21,6 +36,7 @@ const movieCardBuilder = () => {
       domString += '</div>';
       domString += '</div>';
       util.printToDom('movies', domString);
+      movieEvents();
     })
     .catch(err => console.error('movie not found', err));
 };
@@ -59,4 +75,4 @@ const showAddMovie = () => {
   document.getElementById('show-form-button').addEventListener('click', newMovieButton);
 };
 
-export default { movieCardBuilder, showAddMovie };
+export default { movieCardBuilder, showAddMovie, movieEvents };
