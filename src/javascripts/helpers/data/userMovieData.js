@@ -20,4 +20,6 @@ const getUserMovies = () => new Promise((resolve, reject) => {
 
 const addUserMovie = userMovieObject => Axios.post(`${firebaseUrl}/userMovie.json`, userMovieObject);
 
-export default { addUserMovie, getUserMovies };
+const deleteUserMovie = movieId => Axios.delete(`${firebaseUrl}/userMovie/${movieId}.json`);
+
+export default { addUserMovie, getUserMovies, deleteUserMovie };

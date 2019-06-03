@@ -5,4 +5,6 @@ const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const addRating = userMovieObject => Axios.post(`${firebaseUrl}/userMovie.json`, userMovieObject);
 
-export default { addRating };
+const editByRating = (userMovieId, userMovieObj) => Axios.put(`${firebaseUrl}/userMovie/${userMovieId}.json`, userMovieObj);
+
+export default { addRating, editByRating };
