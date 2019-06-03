@@ -10,15 +10,14 @@ const createUserMovie = (e) => {
     const newUserMovie = {
       uid: firebase.auth().currentUser.uid,
       movieId: e.target.id,
-      isWatched: true,
+      isWatched: false,
       rating: 0,
     };
-    userMovieData.addUserMovie(newUserMovie);
-    userMovieData.getUserMovies()
-      .then((userMovies) => {
-        console.error(userMovies);
-      });
-    watchlist.getWatchList();
+    userMovieData.addUserMovie(newUserMovie)
+      .then(() => {
+        watchlist.getWatchList();
+      })
+      .catch(err => console.error('movie not added', err));
   }
 };
 
