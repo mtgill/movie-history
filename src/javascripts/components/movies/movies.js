@@ -38,78 +38,6 @@ const movieCardBuilder = () => {
         domString += `<button id="watchlist.${movie.id}" class="btn btn-info watchlistButton">Add To Watchlist</button>`;
         domString += `<button id="rating.${movie.id}" class="btn btn-warning ratingButton">Rate This Movie</button>`;
         domString += `<button id="delete.${movie.id}" class="btn btn-danger deleteButton">Delete</button>`;
-        // domString += '<div class="rating" data-rating="1">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="1.5">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="2">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="2.5">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="3">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="3.5">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="4">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-
-        // domString += '</div>';
-        // domString += '<div class="rating" data-rating="4.5">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
-        // domString += '<div class="rating" data-rating="5">';
-        // domString += '<i class="star-1">★</i>';
-        // domString += '<i class="star-2">★</i>';
-        // domString += '<i class="star-3">★</i>';
-        // domString += '<i class="star-4">★</i>';
-        // domString += '<i class="star-5">★</i>';
-        // domString += '</div>';
-
         domString += `<h4 class="card-info">MPAA Rating: ${movie.movieRating}</h4>`;
         domString += '</div>';
         domString += '</div>';
@@ -143,7 +71,6 @@ const createMovie = (e) => {
 };
 
 const newMovieButton = () => {
-  // document.getElementById('movie-card').classList.add('hide');
   document.getElementById('add-movies-div').classList.add('hide');
   document.getElementById('movies').classList.add('hide');
   document.getElementById('new-movie').classList.remove('hide');

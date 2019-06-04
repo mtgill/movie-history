@@ -17,8 +17,9 @@ const logoutNavbar = document.getElementById('navbar-button-logout');
 const addMovieDiv = document.getElementById('add-movies-div');
 
 const checkButtonStatus = () => {
+  const { uid } = firebase.auth().currentUser;
   const watchlistButtons = document.getElementsByClassName('watchlistButton');
-  userMovieData.getUserMovies()
+  userMovieData.getUserMovies(uid)
     .then((userMoviesArray) => {
       for (let i = 0; i < watchlistButtons.length; i += 1) {
         const buttonsToDisable = userMoviesArray.filter(userMovie => userMovie.movieId === watchlistButtons[i].id.split('.')[1]);

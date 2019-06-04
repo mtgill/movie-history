@@ -8,6 +8,7 @@ import ratingsData from '../../helpers/data/ratingsData';
 // import movieBuilder from '../movies/movies';
 
 const showWatchlist = () => {
+  getWatchList(); // eslint-disable-line no-use-before-define
   document.getElementById('movies').classList.add('hide');
   document.getElementById('watchlist').classList.remove('hide');
   document.getElementById('show-watchlist-button').classList.add('hide');
@@ -55,11 +56,11 @@ const watchlistEvents = () => {
   document.getElementById('show-watchlist-button').addEventListener('click', showWatchlist);
 };
 
-// modify axios call so that it only pull userMovies when isWatched is false
 const getWatchList = () => {
+  const { uid } = firebase.auth().currentUser;
   let domString = '';
   domString += '<h2><u>Watchlist</u></h2>';
-  userMoviesData.getUserMovies()
+  userMoviesData.getUserMovies(uid)
     .then((userMovies) => {
       userMovies.forEach((userMovie) => {
         domString += '<div class="container">';
