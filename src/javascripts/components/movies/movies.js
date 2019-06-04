@@ -2,7 +2,7 @@ import util from '../../helpers/util';
 import movieData from '../../helpers/data/movieData';
 
 const deleteMovieEvent = (e) => {
-  const movieId = e.target.id;
+  const movieId = e.target.id.split('.')[1];
   movieData.deleteMovie(movieId)
     .then(() => movieCardBuilder()) // eslint-disable-line no-use-before-define
     .catch(err => console.error('no deletion', err));
@@ -26,9 +26,9 @@ const movieCardBuilder = () => {
         domString += '<div class="card movie-card">';
         domString += `<h3 class="card-title">${movie.title}</h3>`;
         domString += `<img src="${movie.imageUrl}" class="img-fluid movie-image" alt="movie photo" />`;
-        domString += `<button id="${movie.id}" class="btn btn-info watchlistButton">Add To Watchlist</button>`;
-        domString += `<button id="${movie.id}" class="btn btn-warning ratingButton">Rate This Movie</button>`;
-        domString += `<button id="${movie.id}" class="btn btn-danger deleteButton">Delete</button>`;
+        domString += `<button id="watchlist.${movie.id}" class="btn btn-info watchlistButton">Add To Watchlist</button>`;
+        domString += `<button id="rating.${movie.id}" class="btn btn-warning ratingButton">Rate This Movie</button>`;
+        domString += `<button id="delete.${movie.id}" class="btn btn-danger deleteButton">Delete</button>`;
         domString += `<h4 class="card-info">MPAA Rating: ${movie.movieRating}</h4>`;
         domString += '</div>';
         domString += '</div>';
