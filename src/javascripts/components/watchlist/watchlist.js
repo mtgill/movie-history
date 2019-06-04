@@ -62,17 +62,26 @@ const getWatchList = () => {
   userMoviesData.getUserMovies()
     .then((userMovies) => {
       userMovies.forEach((userMovie) => {
+        domString += '<div class="container">';
+        domString += '<div class="row">';
         if (userMovie.isWatched === false) {
           movieData.getMoviesByUid()
             .then((movies) => {
               const matchingMovies = movies.filter(movie => movie.id === userMovie.movieId);
               matchingMovies.forEach((matchingMovie) => {
+                domString += '<div id="movie-card" class=" d-flex col-sm-12 col-md-6 col-lg-3 card-group">';
+                domString += '<div class="card movie-card">';
                 domString += `<div id="${userMovie.movieId}">`;
                 domString += `<h4>${matchingMovie.title}</h4>`;
+                domString += `<img src="${matchingMovie.imageUrl}" class="img-fluid movie-image" alt="movie photo" />`;
                 domString += `<button id="watchlistRate.${userMovie.id}" class="btn btn-outline-success watchlist-rate">Rate</button>`;
                 domString += `<button id="watchlistDelete.${userMovie.id}" class="btn btn-outline-dark watchlist-delete">Remove</button>`;
                 domString += '</div>';
+                domString += '</div>';
+                domString += '</div>';
               });
+              domString += '</div>';
+              domString += '</div>';
               util.printToDom('watchlist', domString);
               watchlistEvents();
             })

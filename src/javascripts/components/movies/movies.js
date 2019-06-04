@@ -8,11 +8,20 @@ const deleteMovieEvent = (e) => {
     .catch(err => console.error('no deletion', err));
 };
 
+const showMoviesDiv = () => {
+  document.getElementById('movies').classList.remove('hide');
+  document.getElementById('watchlist').classList.add('hide');
+  document.getElementById('show-watchlist-button').classList.remove('hide');
+  document.getElementById('show-movies-button').classList.add('hide');
+  document.getElementById('show-form-button').classList.remove('hide');
+};
+
 const movieEvents = () => {
   const deleteButtons = document.getElementsByClassName('deleteButton');
   for (let i = 0; i < deleteButtons.length; i += 1) {
     deleteButtons[i].addEventListener('click', deleteMovieEvent);
   }
+  document.getElementById('show-movies-button').addEventListener('click', showMoviesDiv);
 };
 
 const movieCardBuilder = () => {
