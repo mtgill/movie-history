@@ -25,6 +25,13 @@ const setRating = (e) => {
                 document.getElementById(`watchlist.${targetId}`).classList.add('hide');
                 watchlist.getWatchList();
               });
+          } else {
+            ratingsData.addRating(newUserMovie)
+              .then(() => {
+                document.getElementById(`rating.${targetId}`).classList.add('hide');
+                document.getElementById(`watchlist.${targetId}`).classList.add('hide');
+                watchlist.getWatchList();
+              });
           }
         });
       });
