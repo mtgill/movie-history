@@ -19,10 +19,9 @@ Once a movie is added to the watchlist the user still has the ability to rate th
 * html, scss and javascript
 * modular javascript
 * import and export to pass information between modules
-* more secure information approach
 * axios get to retrieve data from json files
 * xmlhttprequest promises
-* firebase crud
+* firebase CRUD
 
 ## Installation Instructions
 * Clone down this repo
