@@ -7,13 +7,13 @@ Once a movie is added to the watchlist the user still has the ability to rate th
 
 ## Screenshots
 
-![movie-history screenshot-1]( "movie-history screenshot-1")
+![movie-history screenshot-1](https://raw.githubusercontent.com/mtgill/movie-history/master/assets/screenshots/movie-history-main.PNG "movie-history screenshot-1")
 
-![movie-history screenshot-2]("movie-history screenshot-2")
+![movie-history screenshot-2](https://raw.githubusercontent.com/mtgill/movie-history/master/assets/screenshots/movie-history-singleMovie.PNG "movie-history screenshot-2")
 
-![movie-history screenshot-3]( "movie-history screenshot-3")
+![movie-history screenshot-3](https://raw.githubusercontent.com/mtgill/movie-history/master/assets/screenshots/movie-history-watchlist-demo.PNG "movie-history screenshot-3")
 
-![movie-history screenshot-4]( "movie-history screenshot-4")
+![movie-history screenshot-4](https://raw.githubusercontent.com/mtgill/movie-history/master/assets/screenshots/movie-history-watchlist.PNG "movie-history screenshot-4")
 
 # Technologies Used
 * html, scss and javascript
